@@ -29,14 +29,15 @@ function checkCollision(rock) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
 
     // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
-    const dodgerRightEdge = dodgerLeftEdge + 40; //the right edge is 40 pixels
+    const dodgerRightEdge = dodgerLeftEdge + 40; //the right edge of the dodger is 40 pixels away from the left edge
 
     const rockLeftEdge = positionToInteger(rock.style.left)
 
     // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
-    const rockRightEdge = rockLeftEdge + 20;
+    const rockRightEdge = rockLeftEdge + 20; //the right edge of the rock is 20 pixels away from the left edge
 
-    if ((rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge) || (rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge) || (rockLeftEdge >= dodgerLeftEdge) && (rockRightEdge <= dodgerRightEdge)/**
+    if ((rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge) || (rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge) || (rockLeftEdge >= dodgerLeftEdge) && (rockRightEdge <= dodgerRightEdge))
+              /**
                * Think about it -- what's happening here?
                * There's been a collision if one of three things is true:
                * 1. The rock's left edge is < the DODGER's left edge,
@@ -45,7 +46,7 @@ function checkCollision(rock) {
                *    and the rock's right edge is < the DODGER's right edge;
                * 3. The rock's left edge is < the DODGER's right edge,
                *    and the rock's right edge is > the DODGER's right edge
-               */) {
+               */ {
       return true
     }
   }
