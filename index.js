@@ -38,6 +38,11 @@ function checkCollision(rock) {
 
     if ((rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge) || (rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge) || (rockLeftEdge >= dodgerLeftEdge) && (rockRightEdge <= dodgerRightEdge))
               /**
+              if dodger's left edge is between rock's left and right edges 
+              OR dodger's right edge is between rock's left and right edges 
+              OR dodger's left and right edges are between rock's left and right edges
+              then return collision is true
+              
                * Think about it -- what's happening here?
                * There's been a collision if one of three things is true:
                * 1. The rock's left edge is < the DODGER's left edge,
@@ -60,7 +65,7 @@ function createRock(x) {
   rock.style.left = `${x}px`
 
   // Hmmm, why would we have used `var` here?
-  var top = 0
+  var top = 0 //top 
 
   rock.style.top = top
 
