@@ -65,7 +65,7 @@ function createRock(x) {
   rock.style.left = `${x}px`
 
   // Hmmm, why would we have used `var` here?
-  var top = 0 //var is global
+  var top = 0 //define variable globally
 
   rock.style.top = top
 
@@ -107,7 +107,7 @@ GAME.appendChild(rock);
      }
   }
 
-  // We should kick of the animation of the rock around here
+  // We should kick off the animation of the rock around here
 window.requestAnimationFrame(moveRock);
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
